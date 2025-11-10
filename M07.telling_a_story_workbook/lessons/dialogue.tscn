@@ -84,6 +84,7 @@ offset_right = -35.0
 offset_bottom = -471.47998
 grow_horizontal = 2
 grow_vertical = 2
+bbcode_enabled = true
 text = "Hello Word!"
 fit_content = true
 

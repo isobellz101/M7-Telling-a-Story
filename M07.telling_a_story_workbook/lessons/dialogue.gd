@@ -20,7 +20,7 @@ var bodies := {
 var dialogue_items: Array[Dictionary] = [
 	{
 		"expression": expressions["happy"],
-		"text": "Hey! Its been forver since we last met!!",
+		"text": "[wave][b]Hey![/b][/wave] Its been forver since we last met!!",
 		"character": bodies["sophia"],
 	},
 	{
@@ -35,27 +35,27 @@ var dialogue_items: Array[Dictionary] = [
 	},
 	{
 		"expression": expressions["regular"],
-		"text": "Right now, we're learning about Arrays.",
+		"text": "Right now, we're learning about [shake][i]Arrays.[/i][/shake]",
 		"character": bodies["pink"],
 	},
 	{
 		"expression": expressions["happy"],
-		"text": "Oooo that sounds interesting!",
+		"text": "Oooo that sounds [wave]interesting![/wave]",
 		"character": bodies["sophia"],
 	},
 	{
 		"expression": expressions["sad"],
-		"text": "It is, its just that it can sometimes be a little challenging",
+		"text": "It is, its just that it can sometimes be a little [shake]challenging.[shake]",
 		"character": bodies["pink"],
 	},
 	{
 		"expression": expressions["happy"],
-		"text": "You got this! Learning new things always has its challenges but I know you will be able to overcome them!",
+		"text": "[wave][rainbow val=1.0]You got this![/rainbow][/wave] Learning new things always has its challenges but I know you will be able to overcome them!",
 		"character": bodies["sophia"],
 	},
 	{
 		"expression": expressions["happy"],
-		"text": "Thanks I really needed that. Nevertheless, I know this will help me become a better coder!",
+		"text": "Thanks I really needed that. Nevertheless, I know this will help me become a better [tornado freq=3.0] [rainbow val=1.0]coder!![/rainbow][/tornado]",
 		"character": bodies["pink"],
 	},
 ]
