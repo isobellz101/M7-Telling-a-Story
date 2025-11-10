@@ -12,18 +12,51 @@ var expressions := {
 	"sad": preload("res://assets/emotion_sad.png"),
 }
 
+var bodies := {
+	"sophia": preload("res://assets/sophia.png"),
+	"pink": preload("res://assets/pink.png")
+}
+
 var dialogue_items: Array[Dictionary] = [
 	{
-		"expression": expressions["regular"],
-		"text": "I'm excited to learn about Arrays,",
+		"expression": expressions["happy"],
+		"text": "Hey! Its been forver since we last met!!",
+		"character": bodies["sophia"],
 	},
 	{
 		"expression": expressions["sad"],
-		"text": "but im still a little nervous!",
+		"text": "Yeah, Ive been busy trying to catch up on my classwork.",
+		"character": bodies["pink"],
+	},
+	{
+		"expression": expressions["regular"],
+		"text": "oh, what is it about?",
+		"character": bodies["sophia"],
+	},
+	{
+		"expression": expressions["regular"],
+		"text": "Right now, we're learning about Arrays.",
+		"character": bodies["pink"],
 	},
 	{
 		"expression": expressions["happy"],
-		"text": "Nevertheless, I know this will help me become a better coder!",
+		"text": "Oooo that sounds interesting!",
+		"character": bodies["sophia"],
+	},
+	{
+		"expression": expressions["sad"],
+		"text": "It is, its just that it can sometimes be a little challenging",
+		"character": bodies["pink"],
+	},
+	{
+		"expression": expressions["happy"],
+		"text": "You got this! Learning new things always has its challenges but I know you will be able to overcome them!",
+		"character": bodies["sophia"],
+	},
+	{
+		"expression": expressions["happy"],
+		"text": "Thanks I really needed that. Nevertheless, I know this will help me become a better coder!",
+		"character": bodies["pink"],
 	},
 ]
 
@@ -39,13 +72,14 @@ func show_text() -> void:
 	expression.texture = current_item["expression"]
 	rich_text_label.visible_ratio = 0.0
 	var tween := create_tween()
-	var text_appearing_duration := 1.2
+	var text_appearing_duration : float = current_item["text"].length() / 30.0 
 	tween.tween_property(rich_text_label, "visible_ratio", 1.0, text_appearing_duration)
 	var sound_max_offset := audio_stream_player.stream.get_length() - text_appearing_duration
 	var sound_start_position := randf() * sound_max_offset
 	audio_stream_player.play(sound_start_position)
 	tween.finished.connect(audio_stream_player.stop)
 	slide_in()
+	body.texture = current_item["character"]
 	 
 func advance() -> void:
 	current_item_index += 1
